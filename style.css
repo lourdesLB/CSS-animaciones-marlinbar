@@ -1,0 +1,100 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+  
+:root {
+
+    --color-primario-oscuro: hsl(294, 48%, 28%);
+    --color-primario-claro: hsl(268, 23%, 73%);
+    --color-primario-mas-claro: hsl(250, 16%, 85%);
+
+    --color-fuente-primaria: hsl(0, 0%, 100%);
+    --color-fuente-secundaria: hsl(294, 48%, 28%);
+
+    --tam-fuente-primaria: 2rem;
+    --tam-fuente-secundaria: 1.5rem;
+
+    --fuente-primaria: 'Niconne', cursive;
+    --fuente-secundaria: 'Itim', cursive;
+    
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    background-color: var(--color-primario-claro);
+
+}
+
+/*-----------------------------------------------------*/
+
+.cabecera {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    width: clamp(500px, 35vw, 800px);
+    background-color: var(--color-primario-oscuro);
+
+    padding: 0.9rem;
+    border-radius: 1.8rem;
+}
+
+.titulo {
+    font-family: var(--fuente-primaria);
+    font-size: var(--tam-fuente-primaria);
+    color: var(--color-fuente-primaria);
+}
+
+
+.fa {
+    color: var(--color-fuente-primaria);
+}
+
+/*-----------------------------------------------------*/
+
+.animaciones {
+
+    background-color: var(--color-primario-mas-claro);
+    box-shadow: 10px 10px 10px #855b5b44;
+    padding: 2rem;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+
+
+}
+
+.animacion {
+    border-radius: 0.9rem;
+    border: 1px solid var(--color-primario-oscuro);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.animacion_titulo {
+    font-family: var(--fuente-secundaria);
+    font-size: var(--tam-fuente-secundaria);
+    color: var(--color-fuente-secundaria);
+}

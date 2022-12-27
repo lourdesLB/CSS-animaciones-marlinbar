@@ -133,7 +133,22 @@ body {
 
 }
 
+.animacion_boton:hover {
+    background-color: var(--color-primario-claro);
+    color: var(--color-fuente-secundaria);
+    border: 2px solid var(--color-fuente-secundaria);
+}
+
 /*----------------------------------------------*/
+
+/* .anim1_box:hover .anim1_bola1{
+    animation-play-state: paused;
+}
+
+.anim1_box:hover .anim1_bola2{
+    animation-play-state: paused;
+} */
+
 
 .anim1_box{
     display: flex;
@@ -154,7 +169,6 @@ body {
     --altura-salto: calc(var(--tam-elemento)*3);
     --long-salto: calc(var(--tam-elemento)*7);
 }
-
 
 
 @keyframes ball1_bounce {

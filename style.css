@@ -24,13 +24,18 @@
 
     --fuente-primaria: 'Niconne', cursive;
     --fuente-secundaria: 'Itim', cursive;
-    
+
+    --tam-box: 15rem;
+
+    --tam-elemento: 1.5rem;
 }
 
 body {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 3rem;
 
     height: 100vh;
     background-color: var(--color-primario-claro);
@@ -78,18 +83,28 @@ body {
     justify-content: center;
     gap: 2rem;
     grid-template-columns: 1fr 1fr;
-
-
 }
 
 .animacion {
     border-radius: 0.9rem;
     border: 1px solid var(--color-primario-oscuro);
 
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center; 
+    height: var(--tam-box);
+    */
+    height: var(--tam-box);
+    width: var(--tam-box);
+
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
     align-items: center;
+    justify-items: center;
+
+    gap: 1rem;
+    padding: 1rem;
 
 }
 
@@ -98,3 +113,119 @@ body {
     font-size: var(--tam-fuente-secundaria);
     color: var(--color-fuente-secundaria);
 }
+
+.animacion_contenido {
+    height: 100%;
+    width: 100%;
+}
+
+.animacion_boton {
+
+    padding: 0.5rem;
+    border-radius: 0.8rem;
+    border: 2px solid white;
+
+    background-color: var(--color-primario-oscuro);
+
+    font-family: var(--fuente-secundaria);
+    font-size: calc(var(--tam-fuente-secundaria)/2);
+    color: var(--color-fuente-primaria);
+
+}
+
+/*----------------------------------------------*/
+
+.anim1_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+.bola {
+    width: var(--tam-elemento);
+    height: var(--tam-elemento);
+    border-radius: 0.8rem;
+}
+
+.anim1_bola1 {
+    background: radial-gradient(at top left, hsl(0, 0%, 100%) 2%, hsl(0, 76%, 59%), hsl(0, 86%, 33%));
+
+    animation: ball1_bounce 2s linear infinite alternate;
+
+    --altura-salto: calc(var(--tam-elemento)*3);
+    --long-salto: calc(var(--tam-elemento)*7);
+}
+
+
+
+@keyframes ball1_bounce {
+    0% {
+        /* transform: translateX(0) translateY(0); */
+        transform: translate(0,0);
+    }
+
+    25% {
+        /* transform: translateX(25%) translateY(25%); */
+        transform: translate(calc(var(--long-salto)/4), calc(var(--altura-salto)/2));
+    }
+
+    50%{
+        /* transform: translateX(50%) translateY(100%); */
+        transform: translate(calc(var(--long-salto)/2), var(--altura-salto));
+        background: radial-gradient(at top left, hsl(0, 0%, 100%) 2%, hsl(52, 77%, 52%), hsl(42, 81%, 23%));
+    }
+
+    75%{
+        /* transform: translateX(75%) translateY(50%); */
+        transform: translate(calc(var(--long-salto)*3/4), calc(var(--altura-salto)/2));
+
+    }
+
+    100% {
+        /* transform: translateX(100%) translateY(0%); */
+        transform: translate(var(--long-salto));
+
+    }
+}
+
+.anim1_bola2 {
+
+    align-self: flex-end;
+    background: radial-gradient(at top left, hsl(0, 0%, 100%) 2%, hsl(219, 77%, 52%), hsl(252, 91%, 50%));
+
+    animation: ball2_bounce 2s linear infinite alternate;
+
+    --altura-salto: calc(var(--tam-elemento)*3);
+    --long-salto: calc(var(--tam-elemento)*7);
+
+}
+
+@keyframes ball2_bounce {
+    0% {
+        transform: translate(0,0);
+    }
+
+    25% {
+        transform: translate(calc((-1)*var(--long-salto)/4), calc((-1)*var(--altura-salto)/2));
+    }
+
+    50%{
+        transform: translate(calc((-1)*var(--long-salto)/2), calc((-1)*var(--altura-salto)));
+        background: radial-gradient(at top left, hsl(0, 0%, 100%) 2%, hsl(52, 77%, 52%), hsl(42, 81%, 23%));
+    }
+
+    75%{
+        transform: translate(calc((-1)*var(--long-salto)*3/4), calc((-1)*var(--altura-salto)/2));
+
+    }
+
+    100% {
+        transform: translate(calc((-1)*var(--long-salto)));
+
+    }
+}
+
+
+
+
+/*---------------------------------------------*/
+

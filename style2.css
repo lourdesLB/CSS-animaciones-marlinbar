@@ -364,8 +364,8 @@ body {
 }
 
 .barra1 {
-    /* animation: bar1_grow 3s 0s cubic-bezier(.43,.84,.61,.14) forwards; */
-    animation: bar1_grow 9s 0s cubic-bezier(.43,.84,.61,.14) infinite;
+    animation: bar1_grow 3s 0s cubic-bezier(.43,.84,.61,.14) forwards;
+    /* animation: bar1_grow 9s 0s cubic-bezier(.43,.84,.61,.14) infinite; */
     background-color: hsl(240, 100%, 50%);
     width: var(--tam-elemento);
 }
@@ -377,17 +377,17 @@ body {
     16% {
         height: calc(var(--alturamax)/4);
     }
-    33% {
+    /* 33% {
         height: calc(var(--alturamax)/3);
-    }
+    } */
     100% {
         height: calc(var(--alturamax)/3);
     }
 }
 
 .barra2 {
-    /* animation: bar2_grow 3s 3s cubic-bezier(.43,.84,.61,.14) forwards; */
-    animation: bar2_grow 9s 3s cubic-bezier(.43,.84,.61,.14) infinite;
+    animation: bar2_grow 3s 3s cubic-bezier(.43,.84,.61,.14) forwards;
+    /* animation: bar2_grow 9s 3s cubic-bezier(.43,.84,.61,.14) infinite; */
     background-color: hsl(0, 100%, 50%);
     width: var(--tam-elemento);
 }
@@ -399,17 +399,17 @@ body {
     16% {
         height: calc(var(--alturamax)/3);
     }
-    33% {
+    /* 33% {
         height: calc(var(--alturamax)/2);
-    }
+    } */
     100% {
         height: calc(var(--alturamax)/2);
     }
 }
 
 .barra3 {
-    /* animation: bar3_grow 3s 6s cubic-bezier(.43,.84,.61,.14) forwards; */
-    animation: bar3_grow 9s 6s cubic-bezier(.43,.84,.61,.14) infinite;
+    animation: bar3_grow 3s 6s cubic-bezier(.43,.84,.61,.14) forwards;
+    /* animation: bar3_grow 9s 6s cubic-bezier(.43,.84,.61,.14) infinite; */
     background-color: hsl(300, 100%, 25%);
     width: var(--tam-elemento);
 }
@@ -422,9 +422,9 @@ body {
     16% {
         height: calc(var(--alturamax)/2);
     }
-    33% {
+    /* 33% {
         height: calc(var(--alturamax));
-    }
+    } */
     100% {
         height: calc(var(--alturamax));
     }

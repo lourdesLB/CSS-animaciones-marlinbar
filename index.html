@@ -10,46 +10,81 @@
 </head>
 
 <body>
-    <div class="cabecera">
-        <div class="fa fa-eye" style="font-size:48px;"></div>
-        <div class="titulo">
-          <p>
-            Ambliopía - Lourdes Linares
-          </p>
-        </div>
-    </div>
 
-    <div class="animaciones">
-
-        <div class="animacion" id="animacion1">
-
-            <div class="animacion_titulo">
-                Balls' high-five
+    <div class="panel">
+        <div class="cabecera">
+            <div class="fa fa-eye" style="font-size:48px;"></div>
+            <div class="titulo">
+            <p>
+                Ambliopía - Lourdes Linares
+            </p>
             </div>
-
-            <div class="animacion_contenido anim1_box">
-                <div class="bola anim1_bola1">  </div>
-                <div class="bola anim1_bola2">  </div>
-            </div>
-
-            <button class="animacion_boton" id="boton_1">Detener</button>
-
         </div>
 
-        <div class="animacion" id="animacion2">
-            <div class="animacion_titulo">
-                Bezier spinner
+        <div class="animaciones">
+
+            <div class="animacion_container" id="animacion1">
+
+                <div class="animacion_titulo">
+                    Balls' high-five
+                </div>
+
+                <div class="animacion_contenido anim1_box">
+                    <div class="subanimacion bola anim1_bola1">  </div>
+                    <div class="subanimacion bola anim1_bola2">  </div>
+                </div>
+
+                <button class="animacion_boton" id="boton_1">Detener</button>
+
             </div>
 
-            <div class="animacion_contenido anim2_box">
-                <div class="arco anim2_arco1"></div>
-                <div class="arco anim2_arco2"></div>
+            <div class="animacion_container" id="animacion2">
+                <div class="animacion_titulo">
+                    Bezier spinner
+                </div>
+
+                <div class="animacion_contenido anim2_box">
+                    <div class="subanimacion arco anim2_arco1"></div>
+                    <div class="subanimacion arco anim2_arco2"></div>
+                </div>
+
+                <button class="animacion_boton" id="boton_2" >Detener</button>
+        
             </div>
 
-            <button class="animacion_boton" id="boton_2" >Detener</button>
-    
+            <div class="animacion_container" id="animacion3">
+                <div class="animacion_titulo">
+                    Chain effect
+                </div>
+
+                <div class="animacion_contenido anim3_box">
+                    <div class="subanimacion arrow">
+                        <div class="rectangle">Push!</div>
+                        <div class="triangle"></div>
+                    </div>
+                    <div class="subanimacion bola anim3_bola"></div>
+                </div>
+        
+            </div>
+
+            <div class="animacion_container" id="animacion4">
+                <div class="animacion_titulo">
+                    Sequentiality
+                </div>
+
+                <div class="animacion_contenido anim4_box">
+                    <div class="subanimacion barra" id="barra1"></div>
+                    <div class="subanimacion barra" id="barra2"></div>
+                    <div class="subanimacion barra" id="barra3"></div>
+                </div>
+
+                <button class="animacion_boton" id="boton_4" >Detener</button>
+        
+            </div>
+
+            
+
         </div>
-
     </div>
 
     <script src="script.js"></script>    

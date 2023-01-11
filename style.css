@@ -25,21 +25,29 @@
     --fuente-primaria: 'Niconne', cursive;
     --fuente-secundaria: 'Itim', cursive;
 
-    --tam-box: 15rem;
+    --tam-box: 13rem;
 
     --tam-elemento: 1.5rem;
 }
 
 body {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+    height: 100vh;    
+    background-color: var(--color-primario-claro);
+
+}
+
+.panel {
+    gap: 2rem;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
-
-    height: 100vh;
-    background-color: var(--color-primario-claro);
-
+    gap: 2rem;
 }
 
 /*-----------------------------------------------------*/
@@ -75,7 +83,7 @@ body {
 .animaciones {
 
     background-color: var(--color-primario-mas-claro);
-    box-shadow: 10px 10px 10px #855b5b44;
+    box-shadow: 10px 10px 10px hsla(0, 19%, 44%, 0.267);
     padding: 2rem;
 
     display: grid;
@@ -85,23 +93,16 @@ body {
     grid-template-columns: 1fr 1fr;
 }
 
-.animacion {
+.animacion_container {
     border-radius: 0.9rem;
     border: 1px solid var(--color-primario-oscuro);
 
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center; 
     height: var(--tam-box);
-    */
-    height: var(--tam-box);
     width: var(--tam-box);
-
-    display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
-    align-items: center;
-    justify-items: center;
 
     gap: 1rem;
     padding: 1rem;
@@ -155,6 +156,9 @@ body {
 .anim1_box{
     display: flex;
     justify-content: space-between;
+
+    --altura-salto: calc(var(--tam-elemento)*2);
+    --long-salto: calc(var(--tam-box)*(2/3));
 }
 
 .bola {
@@ -165,41 +169,25 @@ body {
 
 .anim1_bola1 {
     background: radial-gradient(at top left, hsl(0, 0%, 100%) 2%, hsl(0, 76%, 59%), hsl(0, 86%, 33%));
-
-    animation: ball1_bounce 2s linear infinite alternate;
-
-    --altura-salto: calc(var(--tam-elemento)*3);
-    --long-salto: calc(var(--tam-elemento)*7);
+    animation: ball1_bounce 3s linear infinite alternate;
 }
 
 
 @keyframes ball1_bounce {
-    0% {
-        /* transform: translateX(0) translateY(0); */
+    0%{
         transform: translate(0,0);
     }
-
-    25% {
-        /* transform: translateX(25%) translateY(25%); */
+    25%{
         transform: translate(calc(var(--long-salto)/4), calc(var(--altura-salto)/2));
     }
-
     50%{
-        /* transform: translateX(50%) translateY(100%); */
         transform: translate(calc(var(--long-salto)/2), var(--altura-salto));
-        background: radial-gradient(at top left, hsl(0, 0%, 100%) 2%, hsl(52, 77%, 52%), hsl(42, 81%, 23%));
     }
-
     75%{
-        /* transform: translateX(75%) translateY(50%); */
         transform: translate(calc(var(--long-salto)*3/4), calc(var(--altura-salto)/2));
-
     }
-
-    100% {
-        /* transform: translateX(100%) translateY(0%); */
+    100%{
         transform: translate(var(--long-salto));
-
     }
 }
 
@@ -208,11 +196,7 @@ body {
     align-self: flex-end;
     background: radial-gradient(at top left, hsl(0, 0%, 100%) 2%, hsl(219, 77%, 52%), hsl(252, 91%, 50%));
 
-    animation: ball2_bounce 2s linear infinite alternate;
-
-    --altura-salto: calc(var(--tam-elemento)*3);
-    --long-salto: calc(var(--tam-elemento)*7);
-
+    animation: ball2_bounce 3s linear infinite alternate;
 }
 
 @keyframes ball2_bounce {
@@ -226,7 +210,6 @@ body {
 
     50%{
         transform: translate(calc((-1)*var(--long-salto)/2), calc((-1)*var(--altura-salto)));
-        background: radial-gradient(at top left, hsl(0, 0%, 100%) 2%, hsl(52, 77%, 52%), hsl(42, 81%, 23%));
     }
 
     75%{
@@ -251,13 +234,14 @@ body {
 }
 
 .anim2_arco1 {
-    width: calc(4*var(--tam-elemento));
-    height: calc(4*var(--tam-elemento));
+    width: calc(3.2*var(--tam-elemento));
+    height: calc(3.2*var(--tam-elemento));
     position: absolute;
 
     border: 0.5rem solid transparent;
-    border-color: red blue;
+    border-color: hsl(0, 100%, 50%) hsl(240, 100%, 50%);
     border-radius: 50%;
+
     animation: spinning 2s cubic-bezier(.43,.84,.61,.14) infinite;
 
 }
@@ -279,13 +263,157 @@ body {
 }
 
 .anim2_arco2 {
-    width: calc(3*var(--tam-elemento));
-    height: calc(3*var(--tam-elemento));
+    width: calc(2*var(--tam-elemento));
+    height: calc(2*var(--tam-elemento));
 
     position: absolute;
     border: 0.5rem solid transparent;
-    border-color: red blue;
+    border-color: hsl(0, 100%, 50%) hsl(240, 100%, 50%);
     border-radius: 50%;
+
     animation: spinning 2s cubic-bezier(.43,.84,.61,.14) infinite;
 
+}
+
+/*----------------------------------------------*/
+
+.anim3_box{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    gap: 0.1rem;
+}
+
+.arrow {
+    display: flex;
+    flex: row;
+}
+
+.rectangle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--fuente-secundaria);
+    font-size: 0.8rem;
+    color: white;
+
+    background-color: hsl(240, 100%, 50%);
+    width: calc(2.5*var(--tam-elemento));
+    height: calc(1.2*var(--tam-elemento));
+}
+
+.triangle {
+    border-top: calc(1.2*var(--tam-elemento)/2) solid transparent;
+    border-bottom: calc(1.2*var(--tam-elemento)/2) solid transparent; 
+  
+    border-left: calc(var(--tam-elemento)*2/3) solid hsl(240, 100%, 50%); 
+}
+
+.arrow:hover + .anim3_bola {
+    animation-play-state: running;
+}
+
+.anim3_bola {
+    background: hsl(0, 100%, 50%);
+    animation: ball3_move 2s ease-in forwards;
+    animation-play-state: paused;
+    --long-desplazamiento: calc(var(--tam-elemento)*3);
+}
+
+@keyframes ball3_move {
+    0% {
+        transform: translate(0);
+        background: hsl(0, 100%, 50%);
+    }
+
+    50%{
+        transform: translate(calc(var(--long-desplazamiento)/2),0);
+        background-color: hsl(340, 57%, 64%);
+
+    }
+
+    100% {
+        transform: translate(var(--long-desplazamiento),0);
+        background: hsl(300, 100%, 25%);
+
+    }   
+}
+
+/*----------------------------------------------*/
+
+.anim4_box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;
+    --alturamax: calc(var(--tam-elemento)*3);
+}
+
+
+#barra1 {
+    animation: bar1_grow 9s 0s cubic-bezier(.43,.84,.61,.14) infinite;
+    background-color: hsl(240, 100%, 50%);
+    width: var(--tam-elemento);
+
+}
+
+@keyframes bar1_grow {
+    0% {
+        height: 0;
+    }
+    16% {
+        height: calc(var(--alturamax)/4);
+    }
+    33% {
+        height: calc(var(--alturamax)/3);
+    }
+    100% {
+        height: calc(var(--alturamax)/3);
+    }
+}
+
+#barra2 {
+    animation: bar2_grow 9s 3s cubic-bezier(.43,.84,.61,.14) infinite;
+    background-color: hsl(0, 100%, 50%);
+    width: var(--tam-elemento);
+}
+
+@keyframes bar2_grow {
+    0% {
+        height: 0;
+    }
+    16% {
+        height: calc(var(--alturamax)/3);
+    }
+    33% {
+        height: calc(var(--alturamax)/2);
+    }
+    100% {
+        height: calc(var(--alturamax)/2);
+    }
+}
+
+#barra3 {
+    animation: bar3_grow 9s 6s cubic-bezier(.43,.84,.61,.14) infinite;
+    background-color: hsl(300, 100%, 25%);
+    width: var(--tam-elemento);
+}
+
+@keyframes bar3_grow {
+    0% {
+        height: 0;
+        background-color: hsl(300, 100%, 25%);
+    }
+    16% {
+        height: calc(var(--alturamax)/2);
+    }
+    33% {
+        height: calc(var(--alturamax));
+    }
+    100% {
+        height: calc(var(--alturamax));
+    }
 }

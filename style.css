@@ -20,7 +20,7 @@
     --color-fuente-secundaria: hsl(294, 48%, 28%);
 
     --tam-fuente-primaria: 2rem;
-    --tam-fuente-secundaria: 1.5rem;
+    --tam-fuente-secundaria: 1.4rem;
 
     --fuente-primaria: 'Niconne', cursive;
     --fuente-secundaria: 'Itim', cursive;
@@ -140,6 +140,12 @@ body {
     background-color: var(--color-primario-claro);
     color: var(--color-fuente-secundaria);
     border: 2px solid var(--color-fuente-secundaria);
+}
+
+.animation_altext{
+    font-family: var(--fuente-secundaria);
+    font-size: calc(var(--tam-fuente-secundaria)/2);
+    color: var(--color-fuente-secundaria);
 }
 
 /*----------------------------------------------*/
@@ -330,7 +336,7 @@ body {
 
     50%{
         transform: translate(calc(var(--long-desplazamiento)/2),0);
-        background-color: hsl(340, 57%, 64%);
+        background-color: hsl(317, 36%, 51%);
 
     }
 
@@ -352,12 +358,22 @@ body {
     --alturamax: calc(var(--tam-elemento)*3);
 }
 
+.anim4_box:hover #barra1{
+    animation-play-state: paused;
+}
+
+.anim4_box:hover #barra2{
+    animation-play-state: paused;
+}
+
+.anim4_box:hover #barra3 {
+    animation-play-state: paused;
+}
 
 #barra1 {
     animation: bar1_grow 9s 0s cubic-bezier(.43,.84,.61,.14) infinite;
     background-color: hsl(240, 100%, 50%);
     width: var(--tam-elemento);
-
 }
 
 @keyframes bar1_grow {

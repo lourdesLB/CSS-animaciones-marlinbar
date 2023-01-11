@@ -1,4 +1,4 @@
-
+/*Realizado por Maria Lourdes Linares*/
 
 
 botones = document.querySelectorAll(".animacion_boton");

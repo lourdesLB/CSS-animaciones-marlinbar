@@ -1,5 +1,5 @@
 # CSS-animations
-Exercise using CSS Animations.  
+A collection of CSS Animations.  
 **Author:** Maria Lourdes Linares Barrera.  
 **Email:** marlinbar ARROBA alum.us.es  
 **Github:** github.com/lourdesLB  
